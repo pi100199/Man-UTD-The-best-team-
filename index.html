@@ -14,11 +14,13 @@
       margin: 0;
       font-family: Arial, sans-serif;
       scroll-behavior: smooth; /* Smooth scrolling */
+      transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease; /* Smooth transition for dark mode */
     }
 
     h1, h2 {
       color: rgb(251, 225, 34);
       text-shadow: 0 0 10px rgba(251, 225, 34, 0.8), 0 0 20px rgba(251, 225, 34, 0.6), 0 0 30px rgba(251, 225, 34, 0.4); /* Glow effect */
+      transition: filter 0.3s ease, color 0.3s ease; /* Smooth transition for color change */
     }
 
     /* Button Styles */
@@ -76,6 +78,46 @@
 
     .logo:hover {
       filter: drop-shadow(0 0 30px rgba(255, 0, 0, 1)); /* Stronger red glow on hover */
+    }
+
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    /* Remove glow effects in dark mode */
+    .dark-mode h1, .dark-mode h2 {
+      color: lightbrown; /* Change text color to light brown in dark mode */
+      text-shadow: none; /* Remove glow effect */
+    }
+
+    .dark-mode .logo {
+      filter: none; /* Remove glow effect from logo in dark mode */
+    }
+
+    .dark-mode .bn5 {
+      background-color: #333; /* Darker background for the button in dark mode */
+    }
+
+    /* Dark mode button */
+    .dark-mode-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode-btn:hover {
+      background-color: #333;
     }
 
     /* Back to Top Button Styles */
@@ -175,11 +217,11 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- Dark Mode Button -->
+  <button id="darkModeBtn" class="dark-mode-btn">Dark Mode</button>
+
   <h2>
     Manchester United Football Club, one of the most successful and iconic teams in football history, has an illustrious record of trophies won across multiple decades. Since its inception in 1878, the club has amassed a remarkable collection of silverware, cementing its place as a global powerhouse. The club’s first major title came in 1908 when they won their first league championship, followed by another in 1911. Over the years, Manchester United has accumulated an impressive 20 English top-flight league titles, making them the most successful club in the history of the English top tier, surpassing their closest rivals in domestic football.
-    <br>In addition to their league successes, they have won the FA Cup 12 times, with their most recent triumph coming in 2016. Manchester United’s European dominance began in 1968 when they won their first European Cup, making history as the first English club to claim the prestigious trophy.<br>
-    <br>The club added two more Champions League titles in 1999 and 2008, with the 1999 victory particularly memorable as they completed a historic treble, winning the Premier League, FA Cup, and Champions League in the same season. United's domestic trophy cabinet is equally rich, with three League Cups (Carabao Cups) in 1992, 2006, and 2009. The club’s success is not limited to domestic and European competitions; they have also won the FIFA Club World Cup in 2008, as well as the UEFA Cup Winners' Cup in 1991.<br>
-    <br>Additionally, Manchester United has a strong presence in the Charity Shield (now the Community Shield), having won it 21 times, further showcasing their dominance in English football. The club’s consistent success under legendary managers like Sir Matt Busby and Sir Alex Ferguson helped solidify their position at the pinnacle of both English and European football. Despite recent challenges, Manchester United's remarkable history of titles, spanning over a century, continues to inspire generations of fans around the world, reinforcing their legacy as one of the most decorated football clubs globally.
   </h2>
 
   <!-- Video with Glowing Red Border -->
@@ -188,6 +230,19 @@
   </div>
 
   <script>
+    // Dark mode toggle functionality
+    let darkModeBtn = document.getElementById("darkModeBtn");
+    let body = document.body;
+
+    darkModeBtn.onclick = function () {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        darkModeBtn.textContent = "Light Mode";
+      } else {
+        darkModeBtn.textContent = "Dark Mode";
+      }
+    };
+
     // Get the back-to-top button
     let mybutton = document.getElementById("backToTopBtn");
 
@@ -208,4 +263,3 @@
   </script>
 </body>
 
-</html>
