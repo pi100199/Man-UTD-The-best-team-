@@ -1,65 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manchester United</title>
   <style>
     body {
-        text-align: center;
-        background-image: linear-gradient(rgb(223, 17, 17), rgb(34, 30, 30), rgb(255, 232, 0));
-        min-width: 100%;
-        min-height: 100%;
-        scroll-behavior: smooth; /* Smooth scrolling */
-    }
-
-    .button {
-      background-color: #04AA6D; /* Green */
-      border: none;
-      color: white;
-      padding: 16px 32px;
       text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-      cursor: pointer;
+      background-image: linear-gradient(rgb(223, 17, 17), rgb(34, 30, 30), rgb(255, 232, 0));
+      min-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth; /* Smooth scrolling */
     }
 
-    .button2 {
-      background-color: white; 
-      color: black; 
-      border: 2px solid #008CBA;
+    h1, h2 {
+      color: rgb(251, 225, 34);
+      text-shadow: 0 0 10px rgba(251, 225, 34, 0.8), 0 0 20px rgba(251, 225, 34, 0.6), 0 0 30px rgba(251, 225, 34, 0.4); /* Glow effect */
     }
 
-    .button2:hover {
-      background-color: #008CBA;
-      color: white;
-    }
-
+    /* Button Styles */
     .bn5 {
       padding: 0.6em 2em;
       border: none;
-      outline: none;
       color: rgb(255, 255, 255);
       background: #111;
       cursor: pointer;
       position: relative;
       z-index: 0;
       border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
     }
 
     .bn5:before {
       content: "";
-      background: linear-gradient(
-        45deg,
-        #ff0000,
-        #ff7300,
-        #fffb00,
-        #48ff00,
-        #00ffd5,
-        #002bff,
-        #7a00ff,
-        #ff00c8,
-        #ff0000
-      );
+      background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
       position: absolute;
       top: -2px;
       left: -2px;
@@ -86,34 +64,18 @@
       }
     }
 
-    .bn5:active {
-      color: #000;
-    }
-
-    .bn5:active:after {
-      background: transparent;
-    }
-
     .bn5:hover:before {
       opacity: 1;
     }
 
-    .bn5:after {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: #191919;
-      left: 0;
-      top: 0;
-      border-radius: 10px;
+    .logo {
+      width: 300px;
+      filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8)); /* Red glow effect */
+      transition: filter 0.3s ease-in-out;
     }
 
-    h1, h2 {
-      font-family: Arial, sans-serif; /* Ensuring Arial is used */
-      color: rgb(251, 225, 34);
-      text-shadow: 0 0 10px rgba(251, 225, 34, 0.8), 0 0 20px rgba(251, 225, 34, 0.6), 0 0 30px rgba(251, 225, 34, 0.4); /* Glow effect */
+    .logo:hover {
+      filter: drop-shadow(0 0 30px rgba(255, 0, 0, 1)); /* Stronger red glow on hover */
     }
 
     /* Back to Top Button */
@@ -130,67 +92,87 @@
       cursor: pointer;
       display: none; /* Initially hidden */
       z-index: 100;
+      transition: background-color 0.3s ease;
     }
 
     .back-to-top-btn:hover {
       background-color: #0056b3;
     }
 
-    /* Glowing effect for the logo */
-    .logo {
-      width: 400px;
-      filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8)); /* Red glow effect */
-      transition: filter 0.3s ease-in-out;
-    }
-
-    .logo:hover {
-      filter: drop-shadow(0 0 30px rgba(255, 0, 0, 1)); /* Stronger red glow on hover */
-    }
-
-    /* Glowing red border for video */
+    /* Video Container */
     .video-container {
       display: inline-block;
-      border: 5px solid red; /* Set to bright red */
+      border: 5px solid red;
       border-radius: 10px;
       padding: 10px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1); /* Red glowing effect */
+      box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1);
       transition: box-shadow 0.3s ease-in-out;
     }
 
     .video-container:hover {
-      box-shadow: 0 0 40px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 1); /* Stronger red glow on hover */
+      box-shadow: 0 0 40px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 1);
     }
 
+    /* Responsiveness */
+    @media (max-width: 600px) {
+      .logo {
+        width: 250px;
+      }
+
+      .bn5 {
+        font-size: 14px;
+        padding: 0.4em 1.5em;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <h1 style="font-size:60px;">Manchester United</h1>
+  <h1 style="font-size: 60px;">Manchester United</h1>
   <h2>If you want to see the website of Manchester United, then click the button below</h2>
 
   <a href="https://www.manutd.com" class="bn5">United Website</a><br><br><br>
-  
+
   <!-- Manchester United Logo with Glowing Effect -->
-  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" class="logo">
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" class="logo" alt="Manchester United Logo">
 
   <!-- Back to Top Button -->
-  <button id="backToTopBtn" class="back-to-top-btn">Back to Top</button>
-
-  <br>
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">Back to Top</button>
 
   <h2>
     Manchester United Football Club, one of the most successful and iconic teams in football history, has an illustrious record of trophies won across multiple decades. Since its inception in 1878, the club has amassed a remarkable collection of silverware, cementing its place as a global powerhouse. The club’s first major title came in 1908 when they won their first league championship, followed by another in 1911. Over the years, Manchester United has accumulated an impressive 20 English top-flight league titles, making them the most successful club in the history of the English top tier, surpassing their closest rivals in domestic football.
-    
-    <BR>In addition to their league successes, they have won the FA Cup 12 times, with their most recent triumph coming in 2016. Manchester United’s European dominance began in 1968 when they won their first European Cup, making history as the first English club to claim the prestigious trophy.<BR>
-    
-    <BR>The club added two more Champions League titles in 1999 and 2008, with the 1999 victory particularly memorable as they completed a historic treble, winning the Premier League, FA Cup, and Champions League in the same season. United's domestic trophy cabinet is equally rich, with three League Cups (Carabao Cups) in 1992, 2006, and 2009. The club’s success is not limited to domestic and European competitions; they have also won the FIFA Club World Cup in 2008, as well as the UEFA Cup Winners' Cup in 1991.<BR>
-    
-    <BR>Additionally, Manchester United has a strong presence in the Charity Shield (now the Community Shield), having won it 21 times, further showcasing their dominance in English football. The club’s consistent success under legendary managers like Sir Matt Busby and Sir Alex Ferguson helped solidify their position at the pinnacle of both English and European football. Despite recent challenges, Manchester United's remarkable history of titles, spanning over a century, continues to inspire generations of fans around the world, reinforcing their legacy as one of the most decorated football clubs globally..
+
+    <br>In addition to their league successes, they have won the FA Cup 12 times, with their most recent triumph coming in 2016. Manchester United’s European dominance began in 1968 when they won their first European Cup, making history as the first English club to claim the prestigious trophy.<br>
+
+    <br>The club added two more Champions League titles in 1999 and 2008, with the 1999 victory particularly memorable as they completed a historic treble, winning the Premier League, FA Cup, and Champions League in the same season. United's domestic trophy cabinet is equally rich, with three League Cups (Carabao Cups) in 1992, 2006, and 2009. The club’s success is not limited to domestic and European competitions; they have also won the FIFA Club World Cup in 2008, as well as the UEFA Cup Winners' Cup in 1991.<br>
+
+    <br>Additionally, Manchester United has a strong presence in the Charity Shield (now the Community Shield), having won it 21 times, further showcasing their dominance in English football. The club’s consistent success under legendary managers like Sir Matt Busby and Sir Alex Ferguson helped solidify their position at the pinnacle of both English and European football. Despite recent challenges, Manchester United's remarkable history of titles, spanning over a century, continues to inspire generations of fans around the world, reinforcing their legacy as one of the most decorated football clubs globally.
   </h2>
-  
+
   <!-- Video with Glowing Red Border -->
   <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/CR1We5xXfGA?si=AiCTxFJBAzegQtr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
+
+  <script>
+    // Get the back-to-top button
+    let mybutton = document.getElementById("backToTopBtn");
+
+    // Show the button when the user scrolls down 100px
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+
+    // Scroll to the top when the user clicks the button
+    mybutton.onclick = function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    };
+  </script>
 </body>
+
 </html>
