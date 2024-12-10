@@ -110,14 +110,21 @@
       color: #fff;
       border: none;
       font-size: 18px;
-      border-radius: 5px;
+      border-radius: 50%;
       cursor: pointer;
       z-index: 100;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .dark-mode-btn:hover {
       background-color: #333;
+    }
+
+    .dark-mode-btn i {
+      font-size: 24px;
     }
 
     /* Back to Top Button Styles */
@@ -218,19 +225,16 @@
   </button>
 
   <!-- Dark Mode Button -->
-  <button id="darkModeBtn" class="dark-mode-btn">Dark Mode</button>
+  <button id="darkModeBtn" class="dark-mode-btn"><i class="fas fa-moon"></i></button>
 
   <h2>
-    
-Manchester United Football Club, founded in 1878, is one of the most successful and renowned football clubs in the world, boasting a rich history of triumphs and trophies. Over the decades, the club has accumulated an impressive array of honors, both domestically and internationally, cementing its place as a global powerhouse in the world of football. In terms of league success, Manchester United holds the record for the most English top-flight league titles, having won 20 First Division/Premier League championships, with their first title coming in 1908. The club's dominance continued, especially during the era of manager Sir Alex Ferguson, who led the team to an unprecedented 13 Premier League titles between 1993 and 2013.
+    Manchester United Football Club, one of the most iconic and successful football clubs in the world, boasts a rich history filled with triumphs, trophies, and unforgettable moments. Founded in 1878 as Newton Heath, the club underwent a name change to Manchester United in 1902 and began to rise through the ranks of English football. Over the years, Manchester United has achieved unparalleled success, both domestically and internationally. They have won the English top-flight league title 20 times, the most in English football, with their first title coming in 1908. However, it was under the legendary manager Sir Alex Ferguson, who took charge in 1986, that the club experienced its most dominant period. Ferguson guided the team to 13 Premier League titles, solidifying their place as the most successful club in English football history.
 
-Beyond league glory, Manchester United has enjoyed immense success in cup competitions, with 12 FA Cup victories, a competition they have dominated on numerous occasions, winning their first in 1909 and their most recent in 2016. The club's triumph in the League Cup, securing the trophy five times, adds to its rich domestic silverware collection. 
+Beyond league success, Manchester United has been a force to be reckoned with in cup competitions. The club has won the FA Cup 12 times, with its first victory in 1909 and the most recent in 2016. Their success in the League Cup has been equally impressive, securing the trophy five times, while their triumphs in the Community Shield add to their collection of domestic honors. United has also made an indelible mark in European football, winning the prestigious UEFA Champions League three times. Their most iconic victory came in 1999 when they completed an unprecedented treble, winning the Premier League, FA Cup, and UEFA Champions League in the same season. The 1999 final, in which they famously scored two late goals to defeat Bayern Munich, remains one of the greatest comebacks in football history.
 
-<BR>In European competition, United’s crowning achievement came in the UEFA Champions League, which they have won three times, with their most memorable victory in 1999, when they completed a historic treble (Premier League, FA Cup, and UEFA Champions League) under Ferguson. Their triumph in the 1968 European Cup, which was the first time a British club won Europe's top competition, is a moment forever etched in the club's history.<BR>
+In addition to their European success, Manchester United achieved a historic milestone in 1968, when they became the first English club to win the European Cup, defeating Benfica in the final. This victory marked a new era of success on the continental stage. The club’s global achievements are not limited to Europe, as they won the FIFA Club World Cup in 2008, cementing their position as one of the best teams in the world. Furthermore, Manchester United has claimed the UEFA Super Cup in 1991 and the Intercontinental Cup in 1999, adding to their extensive list of international honors. Their ability to win trophies across multiple competitions and eras reflects the club’s enduring legacy as one of football’s most prestigious and successful institutions.
 
-<BR>In addition to European success, Manchester United has thrived on the global stage, winning the FIFA Club World Cup in 2008 and the UEFA Super Cup in 1991. The club has also lifted the prestigious Intercontinental Cup in 1999, adding to its international accolades. On the domestic front, United's consistent success extends to community honors, having claimed the Community Shield 21 times. Over the years, Manchester United has evolved from a local team to a worldwide phenomenon, continuously adding to its collection of trophies and achieving a legacy that is revered by football fans across the globe.<BR>
-
-<BR>The club’s ability to succeed across different eras, with different managers and players, is a testament to its status as one of the greatest football clubs in history.
+From its humble beginnings to its present status as a global football powerhouse, Manchester United's history is defined by an unwavering pursuit of excellence, with a trophy cabinet that continues to grow. With a dedicated fanbase that spans the globe, the club remains a symbol of success, pride, and tradition in the world of football.
   </h2>
 
   <!-- Video with Glowing Red Border -->
@@ -246,9 +250,9 @@ Beyond league glory, Manchester United has enjoyed immense success in cup compet
     darkModeBtn.onclick = function () {
       body.classList.toggle("dark-mode");
       if (body.classList.contains("dark-mode")) {
-        darkModeBtn.textContent = "Light Mode";
+        darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';  // Change icon to sun when dark mode is on
       } else {
-        darkModeBtn.textContent = "Dark Mode";
+        darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';  // Change icon to moon when dark mode is off
       }
     };
 
@@ -271,4 +275,4 @@ Beyond league glory, Manchester United has enjoyed immense success in cup compet
     };
   </script>
 </body>
-
+</html>
