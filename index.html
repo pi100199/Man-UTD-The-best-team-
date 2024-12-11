@@ -13,17 +13,16 @@
       min-height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth; /* Smooth scrolling */
-      transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease; /* Smooth transition for dark mode */
+      scroll-behavior: smooth;
+      transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
     }
 
     h1, h2 {
       color: rgb(251, 225, 34);
-      text-shadow: 0 0 10px rgba(251, 225, 34, 0.8), 0 0 20px rgba(251, 225, 34, 0.6), 0 0 30px rgba(251, 225, 34, 0.4); /* Glow effect */
-      transition: filter 0.3s ease, color 0.3s ease; /* Smooth transition for color change */
+      text-shadow: 0 0 10px rgba(251, 225, 34, 0.8), 0 0 20px rgba(251, 225, 34, 0.6), 0 0 30px rgba(251, 225, 34, 0.4);
+      transition: filter 0.3s ease, color 0.3s ease;
     }
 
-    /* Button Styles */
     .bn5 {
       padding: 0.6em 2em;
       border: none;
@@ -55,15 +54,9 @@
     }
 
     @keyframes glowingbn5 {
-      0% {
-        background-position: 0 0;
-      }
-      50% {
-        background-position: 400% 0;
-      }
-      100% {
-        background-position: 0 0;
-      }
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
     }
 
     .bn5:hover:before {
@@ -72,32 +65,30 @@
 
     .logo {
       width: 300px;
-      filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8)); /* Red glow effect */
+      filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
       transition: filter 0.3s ease-in-out;
     }
 
     .logo:hover {
-      filter: drop-shadow(0 0 30px rgba(255, 0, 0, 1)); /* Stronger red glow on hover */
+      filter: drop-shadow(0 0 30px rgba(255, 0, 0, 1));
     }
 
-    /* Dark mode styles */
     .dark-mode {
       background-color: #121212;
       color: #ffffff;
     }
 
-    /* Remove glow effects in dark mode */
     .dark-mode h1, .dark-mode h2 {
-      color: lightbrown; /* Change text color to light brown in dark mode */
-      text-shadow: none; /* Remove glow effect */
+      color: lightbrown;
+      text-shadow: none;
     }
 
     .dark-mode .logo {
-      filter: none; /* Remove glow effect from logo in dark mode */
+      filter: none;
     }
 
     .dark-mode .bn5 {
-      background-color: #333; /* Darker background for the button in dark mode */
+      background-color: #333;
     }
 
     /* Dark mode button */
@@ -105,11 +96,11 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      padding: 10px;
+      padding: 15px;
       background-color: #111;
       color: #fff;
       border: none;
-      font-size: 18px;
+      font-size: 20px;
       border-radius: 50%;
       cursor: pointer;
       z-index: 100;
@@ -117,17 +108,40 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.6); /* Initial soft glow */
     }
 
     .dark-mode-btn:hover {
       background-color: #333;
+      transform: scale(1.1); /* Slight scaling on hover */
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.8); /* More prominent glow */
+    }
+
+    .dark-mode-btn:active {
+      transform: scale(0.95); /* Slight shrink effect when pressed */
     }
 
     .dark-mode-btn i {
       font-size: 24px;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    /* Back to Top Button Styles */
+    .dark-mode-btn:hover i {
+      color: #f1c40f; /* Change icon color on hover */
+      transform: rotate(360deg); /* Rotate the icon on hover */
+    }
+
+    /* Dark mode active button effects */
+    .dark-mode-btn.active {
+      background-color: #f39c12; /* Golden color when dark mode is active */
+      box-shadow: 0 4px 20px rgba(241, 156, 18, 0.7), 0 0 40px rgba(241, 156, 18, 0.8);
+    }
+
+    .dark-mode-btn.active i {
+      color: #fff; /* White color for the icon when dark mode is active */
+      transform: rotate(360deg); /* Rotate icon when dark mode is active */
+    }
+
     .back-to-top-btn {
       position: fixed;
       bottom: 20px;
@@ -139,13 +153,12 @@
       padding: 15px 20px;
       font-size: 24px;
       cursor: pointer;
-      display: none; /* Initially hidden */
+      display: none;
       z-index: 100;
       box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
       transition: all 0.3s ease-in-out;
     }
 
-    /* RGB Hover Effect */
     .back-to-top-btn:hover {
       background: linear-gradient(45deg, red, yellow, green, cyan, blue, magenta);
       background-size: 400%;
@@ -155,15 +168,9 @@
     }
 
     @keyframes rgbHover {
-      0% {
-        background-position: 0 0;
-      }
-      50% {
-        background-position: 400% 0;
-      }
-      100% {
-        background-position: 0 0;
-      }
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
     }
 
     .back-to-top-btn:active {
@@ -174,7 +181,6 @@
       font-size: 18px;
     }
 
-    /* Video Container */
     .video-container {
       display: inline-block;
       border: 5px solid red;
@@ -188,7 +194,6 @@
       box-shadow: 0 0 40px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 1);
     }
 
-    /* Responsiveness */
     @media (max-width: 600px) {
       .logo {
         width: 250px;
@@ -216,54 +221,49 @@
 
   <a href="https://www.manutd.com" class="bn5">United Website</a><br><br><br>
 
-  <!-- Manchester United Logo with Glowing Effect -->
   <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" class="logo" alt="Manchester United Logo">
 
-  <!-- Back to Top Button with Arrow -->
   <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Dark Mode Button -->
   <button id="darkModeBtn" class="dark-mode-btn"><i class="fas fa-moon"></i></button>
 
   <h2>
     Manchester United Football Club, one of the most iconic and successful football clubs in the world, boasts a rich history filled with triumphs, trophies, and unforgettable moments. Founded in 1878 as Newton Heath, the club underwent a name change to Manchester United in 1902 and began to rise through the ranks of English football. Over the years, Manchester United has achieved unparalleled success, both domestically and internationally.<BR>
-    
+
     <BR>They have won the English top-flight league title 20 times, the most in English football, with their first title coming in 1908. However, it was under the legendary manager Sir Alex Ferguson, who took charge in 1986, that the club experienced its most dominant period. Ferguson guided the team to 13 Premier League titles, solidifying their place as the most successful club in English football history.<BR>
 
-<BR>Beyond league success, Manchester United has been a force to be reckoned with in cup competitions. The club has won the FA Cup 12 times, with its first victory in 1909 and the most recent in 2016. Their success in the League Cup has been equally impressive, securing the trophy five times, while their triumphs in the Community Shield add to their collection of domestic honors. United has also made an indelible mark in European football, winning the prestigious UEFA Champions League three times.<BR> 
+    <BR>Beyond league success, Manchester United has been a force to be reckoned with in cup competitions. The club has won the FA Cup 12 times, with its first victory in 1909 and the most recent in 2016. Their success in the League Cup has been equally impressive, securing the trophy five times, while their triumphs in the Community Shield add to their collection of domestic honors. United has also made an indelible mark in European football, winning the prestigious UEFA Champions League three times.<BR> 
 
-<BR>Their most iconic victory came in 1999 when they completed an unprecedented treble, winning the Premier League, FA Cup, and UEFA Champions League in the same season. The 1999 final, in which they famously scored two late goals to defeat Bayern Munich, remains one of the greatest comebacks in football history.<BR>
+    <BR>Their most iconic victory came in 1999 when they completed an unprecedented treble, winning the Premier League, FA Cup, and UEFA Champions League in the same season. The 1999 final, in which they famously scored two late goals to defeat Bayern Munich, remains one of the greatest comebacks in football history.<BR>
 
-<BR>In addition to their European success, Manchester United achieved a historic milestone in 1968, when they became the first English club to win the European Cup, defeating Benfica in the final. This victory marked a new era of success on the continental stage. The club’s global achievements are not limited to Europe, as they won the FIFA Club World Cup in 2008, cementing their position as one of the best teams in the world. Furthermore, Manchester United has claimed the UEFA Super Cup in 1991 and the Intercontinental Cup in 1999, adding to their extensive list of international honors. Their ability to win trophies across multiple competitions and eras reflects the club’s enduring legacy as one of football’s most prestigious and successful institutions.<BR>
+    <BR>In addition to their European success, Manchester United achieved a historic milestone in 1968, when they became the first English club to win the European Cup, defeating Benfica in the final. This victory marked a new era of success on the continental stage. The club’s global achievements are not limited to Europe, as they won the FIFA Club World Cup in 2008, cementing their position as one of the best teams in the world. Furthermore, Manchester United has claimed the UEFA Super Cup in 1991 and the Intercontinental Cup in 1999, adding to their extensive list of international honors. Their ability to win trophies across multiple competitions and eras reflects the club’s enduring legacy as one of football’s most prestigious and successful institutions.<BR>
 
-<BR>From its humble beginnings to its present status as a global football powerhouse, Manchester United's history is defined by an unwavering pursuit of excellence, with a trophy cabinet that continues to grow. With a dedicated fanbase that spans the globe, the club remains a symbol of success, pride, and tradition in the world of football.
+    <BR>From its humble beginnings to its present status as a global football powerhouse, Manchester United's history is defined by an unwavering pursuit of excellence, with a trophy cabinet that continues to grow. With a dedicated fanbase that spans the globe, the club remains a symbol of success, pride, and tradition in the world of football.
   </h2>
 
-  <!-- Video with Glowing Red Border -->
   <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/CR1We5xXfGA?si=AiCTxFJBAzegQtr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 
   <script>
-    // Dark mode toggle functionality
     let darkModeBtn = document.getElementById("darkModeBtn");
     let body = document.body;
 
     darkModeBtn.onclick = function () {
       body.classList.toggle("dark-mode");
+      darkModeBtn.classList.toggle("active");
+
       if (body.classList.contains("dark-mode")) {
-        darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';  // Change icon to sun when dark mode is on
+        darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';
       } else {
-        darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';  // Change icon to moon when dark mode is off
+        darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';
       }
     };
 
-    // Get the back-to-top button
     let mybutton = document.getElementById("backToTopBtn");
 
-    // Show the button when the user scrolls down 100px
     window.onscroll = function () {
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         mybutton.style.display = "block";
@@ -272,11 +272,11 @@
       }
     };
 
-    // Scroll to the top when the user clicks the button
     mybutton.onclick = function () {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     };
   </script>
 </body>
+
 </html>
